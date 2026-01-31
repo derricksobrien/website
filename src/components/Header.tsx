@@ -5,7 +5,7 @@ interface HeaderProps {
   title?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title = 'My Website' }) => {
+const Header: React.FC<HeaderProps> = ({ title = 'AI Website' }) => {
   return (
     <header className="header">
       <div className="container">
