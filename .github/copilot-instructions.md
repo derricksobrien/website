@@ -78,7 +78,9 @@ import Header from '../components/Header';
 
 ### Build & Deployment
 - **SWC Minification** - Enabled in `next.config.js` for faster builds
-- **Unoptimized Images** - Currently disabled (`unoptimized: false`) to allow image optimization
+- **Image Optimization** - Unoptimized for GitHub Pages compatibility (`unoptimized: true`)
+- **GitHub Pages** - Configured with `basePath: '/ai-website'` and `assetPrefix: '/ai-website/'` for repository deployment
+- **gh-pages** - Used to deploy the `out/` directory to GitHub Pages
 
 ## Common Tasks
 
@@ -97,6 +99,12 @@ import Header from '../components/Header';
 - Jest watches for changes in `src/**/*.test.ts(x)` files
 - Configure module name mapping in `jest.config.js` to match TypeScript paths
 - Setup file (`jest.setup.js`) imports testing utilities globally
+
+### Deploying to GitHub Pages
+1. Ensure git is configured and changes are committed
+2. Run `npm run deploy` to build and push to GitHub Pages (`gh-pages` branch)
+3. GitHub Pages will automatically serve from `https://derricksobrien.github.io/ai-website/`
+4. The `basePath: '/ai-website'` in `next.config.js` ensures correct asset paths
 
 ## Key Files to Reference
 - [package.json](package.json) - Dependencies and scripts
